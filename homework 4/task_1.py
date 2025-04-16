@@ -41,7 +41,7 @@ class Bank():
         sender_acc.withdraw(amount)
         receiver_acc.deposit(amount)
         print(f"Transfer {amount} {sender_currency} from {sender.name} to {receiver.name} has completed successfully.")
-        
+    
     pass
     
 
