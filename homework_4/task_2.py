@@ -1,4 +1,4 @@
-from task_1 import Bank
+from .task_1 import Bank
 
 bank = Bank("Your bank")
 print("Welcome to Bank Terminal")
@@ -14,7 +14,9 @@ while True:
     if user_choice == "0":
         print("Bye!")
         break
+
     user_name = input("Enter your user name: ").strip()
+
     if user_choice == "2":
         client = bank.add_client(user_name)
 
@@ -38,7 +40,6 @@ while True:
         print("4. Withdraw Funds")
         print("5. Transfer Funds")
         print("6. Show your Accounts")
-        print("7. Save account history to file")
         print("0. Logout")
 
         choice = input("Select option: ").strip()
@@ -86,16 +87,7 @@ while True:
             elif choice == "6":
                 for cur, acc in client.accounts.items():
                     print(f"{cur}: {acc.balance}")
-            # new block
-            elif choice == "7":
-                with open("balance.txt", "w") as fh:
-                    fh.write(f"{user_name} balance status")
-                    total = 0
-                    for cur, acc in client.accounts.items():
-                        fh.write(f"{cur}: {acc.balance}\n")
-                        total += acc.balance
-                    fh.write(f"Total balance: {total}\n")
-            #
+
             elif choice == "0":
                 print("Logging out...")
                 break
