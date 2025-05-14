@@ -1,9 +1,9 @@
 def flatten_list(lst):
     i = 0
     while i < len(lst):
-        if type(lst[i]) == list:
+        if type(lst[i]) is list:
             flatten_list(lst[i])
-            lst[i : i + 1] = lst[i]
+            lst[i:i + 1] = lst[i]
         else:
             i += 1
     return lst

@@ -2,7 +2,7 @@ def merge_dicts(dict_a, dict_b):
     for key, value_b in dict_b.items():
         if key in dict_a:
             value_a = dict_a[key]
-            if type(value_a) == dict or type(value_b) == dict:
+            if type(value_a) is dict or type(value_b) is dict:
                 merge_dicts(value_a, value_b)
             else:
                 dict_a[key] = value_b

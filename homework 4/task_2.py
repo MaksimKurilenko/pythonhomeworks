@@ -1,12 +1,5 @@
 from task_1 import (
-    Account,
-    AccountAlreadyExists,
-    AccountNotFound,
-    Bank,
-    Client,
-    ClientDoNotExist,
-    InvalidDepositAmount,
-    InvalidWithdrawalAmount,
+    Bank
 )
 
 bank = Bank("Your bank")

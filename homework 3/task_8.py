@@ -4,8 +4,8 @@ A = [38, 27, 43, 3, 9, 82, 10, 11, 192, 34]
 def merge_sort(A):
     if len(A) <= 1:
         return A
-    left = merge_sort(A[: len(A) // 2])
-    right = merge_sort(A[len(A) // 2 :])
+    left = merge_sort(A[: len(A)//2])
+    right = merge_sort(A[len(A)//2:])
 
     sorted_list = []
     left_index, right_index = 0, 0
