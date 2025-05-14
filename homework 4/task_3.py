@@ -1,4 +1,14 @@
-from task_1 import Bank, Account, Client, InvalidWithdrawalAmount, AccountAlreadyExists, InvalidDepositAmount, AccountNotFound, ClientDoNotExist
+from task_1 import (
+    Account,
+    AccountAlreadyExists,
+    AccountNotFound,
+    Bank,
+    Client,
+    ClientDoNotExist,
+    InvalidDepositAmount,
+    InvalidWithdrawalAmount,
+)
+
 bank = Bank("Your bank")
 print("Welcome to Bank Terminal")
 
@@ -85,16 +95,16 @@ while True:
             elif choice == "6":
                 for cur, acc in client.accounts.items():
                     print(f"{cur}: {acc.balance}")
-#new block
+            # new block
             elif choice == "7":
-                with open ("balance.txt","w") as fh:
+                with open("balance.txt", "w") as fh:
                     fh.write(f"{user_name} balance status")
                     total = 0
                     for cur, acc in client.accounts.items():
                         fh.write(f"{cur}: {acc.balance}\n")
                         total += acc.balance
                     fh.write(f"Total balance: {total}\n")
-#
+            #
             elif choice == "0":
                 print("Logging out...")
                 break

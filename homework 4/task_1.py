@@ -1,31 +1,35 @@
-
 class InvalidWithdrawalAmount(Exception):
     pass
+
 
 class AccountAlreadyExists(Exception):
     pass
 
+
 class InvalidDepositAmount(Exception):
     pass
+
 
 class AccountNotFound(Exception):
     pass
 
+
 class ClientDoNotExist(Exception):
     pass
 
-class Bank():
+
+class Bank:
     def __init__(self, name):
         self.name = name
         self.clients = {}
 
-    def add_client(self,client_name):
+    def add_client(self, client_name):
         if client_name not in self.clients:
-            self.clients[client_name]=Client(client_name)
+            self.clients[client_name] = Client(client_name)
             print(f"New Client added {client_name}")
         return self.clients[client_name]
-           
-    def remove_client(self,client_name):
+
+    def remove_client(self, client_name):
         if client_name in self.clients:
             del self.clients[client_name]
             print(f"Client {client_name} has been removed successfully")
@@ -35,40 +39,47 @@ class Bank():
     def transfer(self, sender, sender_currency, receiver, receiver_currency, amount):
         if sender_currency != receiver_currency:
             raise ValueError("Transaction failed. Currencies do not match")
-        
+
         sender_acc = sender.get_account(sender_currency)
         receiver_acc = receiver.get_account(receiver_currency)
         sender_acc.withdraw(amount)
         receiver_acc.deposit(amount)
-        print(f"Transfer {amount} {sender_currency} from {sender.name} to {receiver.name} has completed successfully.")
-    
-    pass
-    
+        print(
+            f"Transfer {amount} {sender_currency} from {sender.name} to {receiver.name} has completed successfully."
+        )
 
-class Account():
+    pass
+
+
+class Account:
     def __init__(self, currency):
         self.currency = currency
         self.balance = 0
 
-    def deposit(self,amount):
+    def deposit(self, amount):
         if amount >= 0:
             self.balance += amount
-            print(f"Your account was deposited by {amount}{self.currency}. Current balance is {self.balance} ")
+            print(
+                f"Your account was deposited by {amount}{self.currency}. Current balance is {self.balance} "
+            )
         else:
             raise InvalidDepositAmount("Deposit amount can only be positive value")
-        
-    def withdraw (self, amount):
+
+    def withdraw(self, amount):
         if amount > self.balance:
             raise InvalidWithdrawalAmount("You have insufficient funds on your account")
         else:
             self.balance -= amount
-            print(f"You have withdrawn {amount} {self.currency}. Current balance is {self.balance}")
+            print(
+                f"You have withdrawn {amount} {self.currency}. Current balance is {self.balance}"
+            )
         pass
 
-class Client():
+
+class Client:
     def __init__(self, name):
         self.name = name
-        self.accounts = {} 
+        self.accounts = {}
 
     def open_account(self, currency):
         if currency in self.accounts:

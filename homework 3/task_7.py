@@ -1,6 +1,6 @@
 def merge_sorted_lists(list1, list2):
     i = 0
-    j =0
+    j = 0
     merged_list = []
     while i < len(list1) and j < len(list2):
         if list1[i] < list2[j]:

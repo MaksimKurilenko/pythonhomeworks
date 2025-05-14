@@ -10,4 +10,3 @@ print("Set 1 and Set 2 intersections are: ", intersections)
 print("Set 1 number(s) missing in Set 2", difference1)
 print("Set 2 number(s) missing in Set 1", difference2)
 print("Symmetrical difference of Set 1 and Set 2:", symm_diff)
-

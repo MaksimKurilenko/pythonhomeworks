@@ -2,7 +2,7 @@ decimal = input("Please enter a number in decimal system: ")
 if not decimal.isdigit():
     print("Invalid number.")
 else:
-    decimal = int(decimal) 
+    decimal = int(decimal)
     binary = " "
     if decimal == 0:
         binary = "0"

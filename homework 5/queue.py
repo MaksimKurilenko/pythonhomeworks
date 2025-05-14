@@ -3,10 +3,11 @@ class Node:
         self.data = data
         self.next = None
 
+
 class Queue:
     def __init__(self):
         self._first_node = None
-        self._last_node = None 
+        self._last_node = None
         self._size = 0
 
     def enqueue(self, item):
@@ -24,7 +25,7 @@ class Queue:
         item = self._first_node.data
         self._first_node = self._first_node.next
         if self._first_node is None:
-            self._last_node = None 
+            self._last_node = None
         self._size -= 1
         return item
 

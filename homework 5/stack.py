@@ -1,25 +1,25 @@
 class Node:
     def __init__(self, data):
         self.data = data
-        self.next = None 
+        self.next = None
 
 
 class Stack:
     def __init__(self):
-        self._top_node = None  
-        self._size = 0         
+        self._top_node = None
+        self._size = 0
 
     def push(self, item):
         new_node = Node(item)
-        new_node.next = self._top_node 
-        self._top_node = new_node       
+        new_node.next = self._top_node
+        self._top_node = new_node
         self._size += 1
 
     def pop(self):
         if self.is_empty():
             raise IndexError("Pop from empty stack")
         item = self._top_node.data
-        self._top_node = self._top_node.next  
+        self._top_node = self._top_node.next
         self._size -= 1
         return item
 

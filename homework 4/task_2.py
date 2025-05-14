@@ -1,4 +1,13 @@
-from task_1 import Bank, Account, Client, InvalidWithdrawalAmount, AccountAlreadyExists, InvalidDepositAmount, AccountNotFound, ClientDoNotExist
+from task_1 import (
+    Account,
+    AccountAlreadyExists,
+    AccountNotFound,
+    Bank,
+    Client,
+    ClientDoNotExist,
+    InvalidDepositAmount,
+    InvalidWithdrawalAmount,
+)
 
 bank = Bank("Your bank")
 print("Welcome to Bank Terminal")
