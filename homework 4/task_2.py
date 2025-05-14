@@ -1,6 +1,4 @@
-from task_1 import (
-    Bank
-)
+from task_1 import Bank
 
 bank = Bank("Your bank")
 print("Welcome to Bank Terminal")

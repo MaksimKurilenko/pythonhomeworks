@@ -5,7 +5,7 @@ def unique_elements(list_a):
         i = 0
         while i < len(lst):
             if type(lst[i]) is list:
-                lst[i:i + 1] = lst[i]
+                lst[i : i + 1] = lst[i]
             else:
                 if lst[i] not in new_list:
                     new_list.append(lst[i])
