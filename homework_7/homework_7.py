@@ -1,8 +1,9 @@
+import csv
+import os
+import time
+
 import requests
 from bs4 import BeautifulSoup
-import csv
-import time
-import os
 
 INPUT_FILE = "countries.txt"
 OUTPUT_FILE = "countries_data.csv"
